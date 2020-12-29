@@ -1,0 +1,206 @@
+CREATE TABLE ParkingMaster (
+    ParkingID INTEGER PRIMARY KEY AUTOINCREMENT,
+    ParkingName varchar(256) not null,
+    ParkingAddress varchar(512) not null,
+    Price int not null,
+    CreateDate datetime,
+    UpdateDate datetime
+)
+
+CREATE TABLE TransferClosing (
+    ProcessMonth integer PRIMARY KEY,
+    PayMonth date not null,
+    SumMoney int not null,
+    CreateDate datetime,
+    UpdateDate datetime
+)
+
+
+CREATE TABLE ParkingMaster (
+    ParkingID INTEGER PRIMARY KEY AUTOINCREMENT,
+    ParkingName varchar(256) not null,
+    ParkingAddress varchar(512),
+    CreateDate datetime,
+    UpdateDate datetime
+)
+
+CREATE TABLE PayMaster (
+    PaymentID INTEGER not null PRIMARY KEY,
+    PaymentName varchar(64) not null,
+    CreateDate datetime,
+    UpdateDate datetime
+)
+
+
+CREATE TABLE Payment (
+    AgreeID INTEGER not null,
+    PayMonth date not null,
+    Money int not null,
+    PaymentID INTEGER not null,
+    CreateDate datetime,
+    UpdateDate datetime,
+    PRIMARY KEY(AgreeID,PayMonth)
+)
+
+
+CREATE TABLE SectionMaster (
+    ParkingID INTEGER not null,
+    SectionID INTEGER not null,
+    SectionName varchar(256) not null,
+    Remarks varchar(512),
+    CreateDate datetime,
+    UpdateDate datetime,
+    PRIMARY KEY(ParkingID,SectionID)
+)
+
+CREATE TABLE ClientMaster (
+    ClientID INTEGER PRIMARY KEY AUTOINCREMENT,
+    CorpFlg tinyint not null,
+    ClientName varchar(256) not null,
+    ClientAddress varchar(512) not null,
+    ClientTEL varchar(64) not null,
+    Remarks varchar(512),
+    CreateDate datetime,
+    UpdateDate datetime
+)
+
+CREATE TABLE AccountMaster (
+    ClientID INTEGER  not null,
+    AccountID INTEGER not null,
+    AccountName varchar(64),
+    AccountNo varchar(32),
+    PRIMARY KEY(ClientID,ClientSubID)
+)
+
+
+CREATE TABLE Agreement (
+    AgreeID INTEGER,
+    ClientID INTEGER,
+    ClientSubID INTEGER,
+    PaymentID INTEGER,
+    AgreeFrom date,
+    AgreeTo date,
+    Remarks varchar(512),
+    CreateDate datetime,
+    UpdateDate datetime,
+    PRIMARY KEY(ClientID,ClientSubID)
+)
+
+CREATE TABLE AgreeParking (
+    AgreeID INTEGER,
+    SubID INTEGER,
+    ParkingID INTEGER,
+    SectionID INTEGER,
+    PRIMARY KEY(AgreeID,ParkingID,SectionID)
+)
+
+CREATE TABLE AgreePice (
+    AgreeID INTEGER,
+    Price INTEGER,
+    PRIMARY KEY(AgreeID)
+)
+
+CREATE TABLE Tax (
+    taxFrom datetime,
+    taxTo datetime,
+    rate real,
+    PRIMARY KEY(taxFrom)
+)
+
+
+
+ALTER TABLE ParkingMaster ADD ParkingAddress varchar(512)
+ALTER TABLE ParkingMaster ADD Price int default(8800)
+ALTER TABLE Agreement ADD PaymentID int default(1)
+ALTER TABLE Agreement ADD a16Flg tinyint not null default(0)
+ALTER TABLE ClientMaster ADD Remarks varchar(512)
+ALTER TABLE Payment ADD PaymentID int not null  default(0)
+ALTER TABLE AgreeParking ADD SubID int default(1)
+
+delete from SectionMaster
+insert into SectionMaster values
+(1,1,'íìé‘èÍÇPNo1',8000,'Ç†Ç†Ç†',datetime('now'),datetime('now')),
+(1,2,'íìé‘èÍÇPNo2',8000,'Ç¢Ç¢Ç¢',datetime('now'),datetime('now')),
+(1,3,'íìé‘èÍÇPNo3',8000,'Ç§Ç§Ç§',datetime('now'),datetime('now')),
+(2,1,'íìé‘èÍÇQNo1',8800,'Ç¶Ç¶Ç¶',datetime('now'),datetime('now')),
+(2,2,'íìé‘èÍÇQNo2',8800,'Ç®Ç®Ç®',datetime('now'),datetime('now')),
+(3,1,'íìé‘èÍÇRNo1',9000,'Ç©Ç©Ç©',datetime('now'),datetime('now')),
+(3,2,'íìé‘èÍÇRNo2',9000,'Ç´Ç´Ç´',datetime('now'),datetime('now')),
+(3,3,'íìé‘èÍÇRNo3',9000,'Ç≠Ç≠Ç≠',datetime('now'),datetime('now')),
+(4,1,'íìé‘èÍÇSNo1',9000,'ÇØÇØÇØ',datetime('now'),datetime('now')),
+(4,2,'íìé‘èÍÇSNo2',9000,'Ç±Ç±Ç±',datetime('now'),datetime('now')),
+(4,3,'íìé‘èÍÇSNo3',9000,'Ç≥Ç≥Ç≥',datetime('now'),datetime('now'))
+
+
+
+
+
+delete from ClientMaster
+insert into ClientMaster
+(CorpFlg,ClientName,ClientAddress,ClientTEL,CreateDate,UpdateDate)
+values
+(0,'éRñ{àÍòY','ñkë´óßåSÇP','048-11-11',datetime('now'),datetime('now')),
+(0,'éRñ{éüòY','ñkë´óßåSÇQ','048-22-11',datetime('now'),datetime('now')),
+(0,'éRñ{éOòY','ñkë´óßåSÇR','048-33-11',datetime('now'),datetime('now')),
+(0,'éRñ{éjòY','ñkë´óßåSÇS','048-44-11',datetime('now'),datetime('now')),
+(0,'éRñ{å‹òY','ñkë´óßåSÇT','048-55-11',datetime('now'),datetime('now')),
+(1,'Ç≥Ç¢Ç∆Ç±Ç§ÅiäîÅj','ñkë´óßåSÇU','048-66-11',datetime('now'),datetime('now'))
+
+
+
+delete from Agreement
+insert into Agreement values
+(1,1,1,1,'2020-01-01','2020-03-31',0,'Ç†Ç†Ç†Ç†Ç†','2020-04-15 13:05:01','2020-04-15 13:05:01'),
+(2,1,2,1,'2020-04-01','2020-12-31',0,'Ç¢Ç¢Ç¢Ç¢Ç¢','2020-04-15 13:05:01','2020-04-15 13:05:01'),
+(3,2,1,3,'2020-01-01','2020-04-30',0,'Ç§Ç§Ç§Ç§Ç§jjjj','2020-04-15 13:05:01','2020-04-15 15:18:41'),
+(4,2,2,1,'2020-05-01','2020-06-30',0,'Ç¶Ç¶Ç¶Ç¶Ç¶','2020-04-15 13:05:01','2020-04-15 13:05:01'),
+(5,3,1,1,'2020-01-01','2020-03-31',0,'Ç®Ç®Ç®Ç®Ç®','2020-04-15 13:05:01','2020-04-15 13:05:01'),
+(6,4,1,1,'2021-01-01','2021-01-31',0,'fghjk','2020-04-15 13:05:01','2020-04-15 13:14:23'),
+(7,2,3,1,'2020-04-01','9998-12-31',0,'ÇÜÇáÇàÇäÇã','2020-04-15 15:19:53','2020-04-15 15:19:53'),
+(8,4,2,1,'2020-05-01','9998-12-31',0,'ÇáÇÜÇÑ','2020-04-16 05:40:11','2020-04-16 05:41:25'),
+(9,6,1,1,'2019-12-01','9998-12-31',0,'ÇñÇÜÇÑÇì','2020-04-16 09:13:57','2020-04-16 09:13:57'),
+(10,6,2,1,'2020-04-01','9998-12-31',0,'','2020-04-19 08:55:43','2020-04-19 08:55:43'),
+(11,5,1,1,'2019-07-01','2020-02-29',1,'','2020-04-19 08:56:53','2020-04-19 08:56:53');
+
+delete from AgreeParking
+insert into AgreeParking values
+(1,1,1),
+(2,1,2),
+(3,2,1),
+(4,2,2),
+(5,3,1),
+(6,1,2),
+(7,3,1),
+(8,2,1),
+(9,1,1),
+(10,1,3),
+(11,1,3)
+
+Insert into PayMaster 
+(PaymentID,PaymentName,CreateDate,UpdateDate) 
+values 
+(1,'å˚ç¿êUë÷',datetime('now'),datetime('now')),
+(2,'êUçû',datetime('now'),datetime('now')),
+(3,'åªã‡',datetime('now'),datetime('now'))
+
+
+
+
+select 
+  s.ParkingID,
+  s.SectionID,
+  s.SectionName,
+  MAX(a.AgreeTo)
+from SectionMaster s
+left join Agreement a
+  on s.ParkingID = a.ParkingID
+ and s.SectionID = a.SectionID
+
+
+select
+  *
+from Agreement
+where ('2020-05-01' between AgreeFrom and AgreeTo)
+  and ('2020-05-01' between AgreeFrom and AgreeTo)
+  and ParkingiD = 1 
+  and SectioniD = 1

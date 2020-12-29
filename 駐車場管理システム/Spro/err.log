@@ -1,0 +1,52 @@
+2014/05/11 01:38:48 System.Collections.Generic.KeyNotFoundException: 指定されたキーはディレクトリ内に存在しませんでした。
+   場所 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   場所 Spro.プルーフform.Disp(ExcelWorksheet ws, DateTime dt1, DateTime dt2) 場所 c:\Users\thirota\Documents\Visual Studio 2013\Projects\Spro_sibu\Spro\プルーフform.cs:行 199
+   場所 Spro.プルーフform.bt_xlsx_Click(Object sender, EventArgs e) 場所 c:\Users\thirota\Documents\Visual Studio 2013\Projects\Spro_sibu\Spro\プルーフform.cs:行 256
+2014/05/11 01:39:17 System.Collections.Generic.KeyNotFoundException: 指定されたキーはディレクトリ内に存在しませんでした。
+   場所 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   場所 Spro.プルーフform.Disp(ExcelWorksheet ws, DateTime dt1, DateTime dt2) 場所 c:\Users\thirota\Documents\Visual Studio 2013\Projects\Spro_sibu\Spro\プルーフform.cs:行 199
+   場所 Spro.プルーフform.bt_xlsx_Click(Object sender, EventArgs e) 場所 c:\Users\thirota\Documents\Visual Studio 2013\Projects\Spro_sibu\Spro\プルーフform.cs:行 256
+2014/06/04 02:28:00 System.NullReferenceException: オブジェクト参照がオブジェクト インスタンスに設定されていません。
+   場所 Jrsi.Util.KoumokuLine(ExcelWorksheet ws, Int32 col, String koumoku) 場所 d:\My Documents\Visual Studio 2012\Projects\支部会計処理\Spro\Util.cs:行 173
+   場所 Jrsi.Util.KoumokuLine(ExcelWorksheet ws, String koumoku) 場所 d:\My Documents\Visual Studio 2012\Projects\支部会計処理\Spro\Util.cs:行 188
+   場所 Spro.初期設定Form.KoumokuRead(ExcelWorksheet ws, String Head, Dictionary`2 koumoku, Int32 jigyou, String zyogai) 場所 d:\My Documents\Visual Studio 2012\Projects\支部会計処理\Spro\初期設定Form.cs:行 143
+   場所 Spro.初期設定Form.KoumokuRead(ExcelWorksheet ws, String Head, Dictionary`2 koumoku, Int32 jigyou) 場所 d:\My Documents\Visual Studio 2012\Projects\支部会計処理\Spro\初期設定Form.cs:行 163
+   場所 Spro.初期設定Form.予算書読込(String xlsxname, Boolean 年初) 場所 d:\My Documents\Visual Studio 2012\Projects\支部会計処理\Spro\初期設定Form.cs:行 178
+2014/07/07 07:19:40 System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure '金融機関初期化'.
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   場所 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   場所 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   場所 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   場所 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   場所 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   場所 Jrsi.Util.ExcuteStoredProcedure(DataSet& ds, String pname, List`1 parm) 場所 d:\My Documents\Visual Studio 2012\Projects\支部会計処理\Spro\Util.cs:行 474
+ClientConnectionId:9b36c2f4-3984-459c-bc49-c647ed0955b4
+2014/07/07 07:21:49 System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure '支部使用金融機関'.
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   場所 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   場所 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   場所 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   場所 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   場所 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   場所 Jrsi.Util.ExcuteStoredProcedure(DataSet& ds, String pname, List`1 parm) 場所 d:\My Documents\Visual Studio 2012\Projects\支部会計処理\Spro\Util.cs:行 474
+ClientConnectionId:9b36c2f4-3984-459c-bc49-c647ed0955b4
